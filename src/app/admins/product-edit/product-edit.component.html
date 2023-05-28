@@ -1,0 +1,19 @@
+<!-- <p>product-edit works!</p> -->
+<!-- <img src="https://cdn.discordapp.com/attachments/981697501386145822/1111570256771694653/Joshtzm_We_all_like_sheep_have_gone_astray_each_of_us_has_turne_db62e6c7-ae4c-4ad9-ac67-3a741244d119.png"
+    alt=""> -->
+<form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" formControlName="name" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input class="form-control" type="number" formControlName="price" />
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input class="form-control" type="text" formControlName="image" />
+    </div>
+    <button class="btn btn-primary mt-3" type="submit">Upadate</button>
+    <!-- {{ productForm.value | json }} -->
+</form>

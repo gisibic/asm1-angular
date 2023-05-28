@@ -1,0 +1,35 @@
+<p>product-list works!</p>
+<div class="container">
+    <h1 class="text-info">Quản lý sản phẩm</h1>
+    <!-- <hr /> -->
+    <table class="table-border table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Ảnh</th>
+                <th><button class="btn btn-light" routerLink="/admin/product/add">Add</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of product; index as i">
+                <td width="50">{{ i + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    <img width="70" [src]="item.image" />
+                </td>
+                <td>
+                    <button class="btn btn-primary">Update</button>
+                    <button class="btn btn-danger" (click)="removeItem(item.id!)">
+                        Xóa
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
